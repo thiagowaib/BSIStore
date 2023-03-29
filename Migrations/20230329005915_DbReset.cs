@@ -6,11 +6,27 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BSIStore.Migrations
 {
     /// <inheritdoc />
-    public partial class InitalCreate : Migration
+    public partial class DbReset : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Funcionario",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    nome = table.Column<string>(type: "TEXT", nullable: true),
+                    dataNascimento = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    cargo = table.Column<string>(type: "TEXT", nullable: true),
+                    salario = table.Column<double>(type: "REAL", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Funcionario", x => x.id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Produto",
                 columns: table => new
@@ -31,6 +47,9 @@ namespace BSIStore.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Funcionario");
+
             migrationBuilder.DropTable(
                 name: "Produto");
         }

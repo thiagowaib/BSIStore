@@ -11,14 +11,37 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BSIStore.Migrations
 {
     [DbContext(typeof(BsiStoreContext))]
-    [Migration("20230322011526_InitalCreate")]
-    partial class InitalCreate
+    [Migration("20230329005915_DbReset")]
+    partial class DbReset
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+
+            modelBuilder.Entity("BSIStore.Models.Funcionario", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("cargo")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("dataNascimento")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("nome")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("salario")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Funcionario");
+                });
 
             modelBuilder.Entity("BSIStore.Models.Produto", b =>
                 {
