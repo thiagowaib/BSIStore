@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BSIStore.Models 
 {
@@ -17,6 +18,7 @@ namespace BSIStore.Models
         public string?  categoria    {get; set;}
 
         [Display(Name = "Preço (R$)")]
+        [Column(TypeName = "decimal(18,2)")]
         public double   preco        {get; set;}
     }
 }
