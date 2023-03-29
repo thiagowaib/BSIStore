@@ -19,6 +19,6 @@ namespace BSIStore.Models
 
         [Display(Name = "Preço (R$)")]
         [Column(TypeName = "decimal(18,2)")]
-        public double   preco        {get; set;}
+        public decimal   preco        {get; set;}
     }
 }

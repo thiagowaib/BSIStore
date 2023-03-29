@@ -19,6 +19,6 @@ namespace BSIStore.Models
 
         [Display(Name = "Salário (R$)")]
         [Column(TypeName = "decimal(18,2)")]
-        public double   salario        {get; set;}
+        public decimal   salario        {get; set;}
     }
 }
