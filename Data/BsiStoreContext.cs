@@ -7,14 +7,17 @@ using BSIStore.Models;
 
 namespace BSIStore.Data
 {
-    public class BsiStoreContext : DbContext
+    public class BSIStoreContext : DbContext
     {
-        public BsiStoreContext (DbContextOptions<BsiStoreContext> options) : base(options)
+        public BSIStoreContext (DbContextOptions<BSIStoreContext> options)
+            : base(options)
         {
         }
 
         public DbSet<BSIStore.Models.Produto> Produto { get; set; }
 
-        public DbSet<BSIStore.Models.Funcionario> Funcionario { get; set; }
+        public DbSet<BSIStore.Models.Cliente> Cliente { get; set; }
+
+        public DbSet<BSIStore.Models.Categoria> Categoria { get; set; }
     }
 }

@@ -5,60 +5,73 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-#nullable disable
-
 namespace BSIStore.Migrations
 {
-    [DbContext(typeof(BsiStoreContext))]
-    partial class BsiStoreContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BSIStoreContext))]
+    partial class BSIStoreContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "5.0.0");
 
-            modelBuilder.Entity("BSIStore.Models.Funcionario", b =>
+            modelBuilder.Entity("BSIStore.Models.Categoria", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("cargo")
+                    b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dataNascimento")
+                    b.HasKey("Id");
+
+                    b.ToTable("Categoria");
+                });
+
+            modelBuilder.Entity("BSIStore.Models.Cliente", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("CPF")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("nome")
+                    b.Property<DateTime>("DtNasc")
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("salario")
-                        .HasColumnType("REAL");
+                    b.Property<string>("Email")
+                        .HasColumnType("TEXT");
 
-                    b.HasKey("id");
+                    b.Property<string>("Nome")
+                        .HasColumnType("TEXT");
 
-                    b.ToTable("Funcionario");
+                    b.HasKey("Id");
+
+                    b.ToTable("Cliente");
                 });
 
             modelBuilder.Entity("BSIStore.Models.Produto", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("categoria")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dataValidade")
+                    b.Property<decimal>("preco")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime>("validade")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("descricao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<double>("preco")
-                        .HasColumnType("REAL");
-
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Produto");
                 });

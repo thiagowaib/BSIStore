@@ -1,24 +1,22 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BSIStore.Models 
+namespace BSIStore.Models
 {
     public class Produto
     {
-        public int      id           {get; set;}
-
-        [Display(Name = "Descrição")]
-        public string?  descricao    {get; set;}
-
-        [Display(Name = "Data de Validade")]
+        public int Id {get; set;}
+        [Display(Name="Descrição")]
+        public string Descricao {get; set;}
         [DataType(DataType.Date)]
-        public DateTime dataValidade {get; set;}
+        public DateTime validade {get; set;}
+        public string categoria {get; set;} 
+        [Display(Name="Preço")]
+        [Column(TypeName = "decimal(18,2)")]      
+        public decimal preco {get; set;}
 
-        [Display(Name = "Categoria")]
-        public string?  categoria    {get; set;}
-
-        [Display(Name = "Preço (R$)")]
-        [Column(TypeName = "decimal(18,2)")]
-        public decimal   preco        {get; set;}
+        // Atributo de Relacionamento
+        public virtual Categoria Categoria {get; set;}
     }
 }
