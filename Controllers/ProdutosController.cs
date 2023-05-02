@@ -58,7 +58,7 @@ namespace BSIStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descricao,validade,preco,Categoria")] Produto produto)
+        public async Task<IActionResult> Create([Bind("Id,Descricao,validade,CategoriaId,preco")] Produto produto)
         {
             if (ModelState.IsValid)
             {
@@ -67,7 +67,7 @@ namespace BSIStore.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["Categorias"] = new SelectList(
-                _context.Categoria, "Id","CategoriaId", produto.Categoria.Id
+                _context.Categoria, "Id","Id", produto.Categoria.Id
             );
             return View(produto);
         }
@@ -85,6 +85,9 @@ namespace BSIStore.Controllers
             {
                 return NotFound();
             }
+
+            // Consultar categorias cadastradas no BD
+            ViewData["Categorias"] = new SelectList(_context.Categoria, "Id","Descricao");
             return View(produto);
         }
 
@@ -93,7 +96,7 @@ namespace BSIStore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,validade,categoria,preco")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descricao,validade,CategoriaId,preco")] Produto produto)
         {
             if (id != produto.Id)
             {
@@ -120,6 +123,10 @@ namespace BSIStore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
+            ViewData["Categorias"] = new SelectList(
+                _context.Categoria, "Id","Id", produto.Categoria.Id
+            );
             return View(produto);
         }
 

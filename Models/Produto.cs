@@ -11,10 +11,13 @@ namespace BSIStore.Models
         public string Descricao {get; set;}
         [DataType(DataType.Date)]
         public DateTime validade {get; set;}
+        [Display(Name="Categoria")]
         public string categoria {get; set;} 
+        [Display(Name="Categoria")]
+        public int CategoriaId {get; set;} 
         [Display(Name="Preço")]
-        [Column(TypeName = "decimal(18,2)")]      
-        public decimal preco {get; set;}
+        [DataType(DataType.Currency)]
+        public double preco {get; set;}
 
         // Atributo de Relacionamento
         public virtual Categoria Categoria {get; set;}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj": {}
+    "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\BSIStore.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj": {
+    "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\BSIStore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj",
+        "projectUniqueName": "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\BSIStore.csproj",
         "projectName": "BSIStore",
-        "projectPath": "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj",
+        "projectPath": "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\BSIStore.csproj",
         "packagesPath": "C:\\Users\\Laboratorio\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Laboratorio\\bsistore\\obj\\",
+        "outputPath": "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

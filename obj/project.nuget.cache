@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "b8I8mIyijQ3bo2g7AoCNAm0RD7AIEjUM3uyeJAkm/MfwJbTEhpNHdBTAPuV7+MUozsV7O0Km+xTyi75Bzz9MQA==",
+  "dgSpecHash": "BqzCZ5UzG4InzPvNoF6djc3pdAlqPJctZbHdX07YV13/f63y1rMPa9G5g7KyGeDlp9Yl+Sf2MrWmhAzMhqE4gA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Laboratorio\\bsistore\\BSIStore.csproj",
+  "projectFilePath": "C:\\Users\\Laboratorio\\Downloads\\BSIstore\\BSIStore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Laboratorio\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Laboratorio\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
