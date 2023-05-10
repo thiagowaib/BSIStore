@@ -34,12 +34,13 @@ namespace BSIStore.Controllers
             }
 
             var categoria = await _context.Categoria
+                .Include(m => m.Produtos)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (categoria == null)
             {
                 return NotFound();
             }
-
+            
             return View(categoria);
         }
 

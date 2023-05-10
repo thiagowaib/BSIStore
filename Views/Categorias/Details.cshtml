@@ -16,7 +16,26 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Descricao)
         </dd>
+        <dt class = "col-md-10">
+            Produtos dessa categoria:
+        </dt>
     </dl>
+</div>
+<div>
+    <p>
+        <b>Quantidade de Produtos nessa Categoria:</b>
+        @Html.DisplayFor(model => model.Produtos.Count)
+    </p>
+</div>
+<div>
+    <ul>
+    @foreach (var produto in Model.Produtos) 
+    {
+        <li>
+                @Html.DisplayFor(modelItem => produto.Descricao)
+        </li>
+    }
+    </ul>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |

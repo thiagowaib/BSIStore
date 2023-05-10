@@ -139,6 +139,7 @@ namespace BSIStore.Controllers
             }
 
             var produto = await _context.Produto
+                .Include(p => p.Categoria)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (produto == null)
             {
